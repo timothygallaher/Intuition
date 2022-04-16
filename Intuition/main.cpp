@@ -136,9 +136,10 @@ int main()
 	Init();
 	Sleep(50);
 
-	std::cout << "\nEverything is disabled by default" << std::endl;
+	std::cout << "Everything is disabled by default" << std::endl;
 	std::cout << "[F3] Glow" << std::endl;
 	std::cout << "[F4] Bhop" << std::endl;
+	std::cout << std::endl;
 
 	std::thread delayedThread(DelayedHacks);
 
