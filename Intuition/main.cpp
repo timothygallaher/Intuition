@@ -6,6 +6,7 @@
 
 bool toggleGlow = false;
 bool toggleBhop = false;
+bool toggleAntiflash = false;
 
 
 void Init()
@@ -109,16 +110,31 @@ void ToggleHacks()
 			std::cout << "Bhop disabled" << std::endl;
 		Sleep(100);
 	}
+	if (GetAsyncKeyState(VK_F2) & 1)
+	{
+		toggleAntiflash = !toggleAntiflash;
+		if (toggleAntiflash)
+			std::cout << "Antiflash enabled" << std::endl;
+		else
+			std::cout << "Antiflash disabled" << std::endl;
+		Sleep(100);
+	}
 }
 
 void DelayedHacks()
 {
 	while (true) {
-		if (toggleGlow) {
+		if (toggleGlow)
+		{
 			GlowHack();
 		}
-		if (toggleBhop) {
-			BhopHack();
+		if (toggleBhop)
+		{
+			Bhop();
+		}
+		if (toggleAntiflash)
+		{
+			Antiflash();
 		}
 		Sleep(1);
 	}
@@ -126,7 +142,9 @@ void DelayedHacks()
 
 int main()
 {
-	
+
+	poly();
+
 	SetConsoleTitle("!!INTUITION!!");
 
 	std::cout << std::endl;
@@ -137,11 +155,14 @@ int main()
 	Sleep(50);
 
 	std::cout << "Everything is disabled by default" << std::endl;
+	std::cout << "[F2] Antiflash" << std::endl;
 	std::cout << "[F3] Glow" << std::endl;
 	std::cout << "[F4] Bhop" << std::endl;
 	std::cout << std::endl;
 
 	std::thread delayedThread(DelayedHacks);
+
+	poly();
 
 	while (true)
 	{

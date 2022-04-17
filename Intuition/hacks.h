@@ -4,4 +4,8 @@
 
 void GlowHack();
 
-void BhopHack();
+void Bhop();
+
+void Trigger();
+
+void Antiflash();

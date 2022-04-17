@@ -43,10 +43,29 @@ void GlowHack()
 
 }
 
-void BhopHack()
+void Bhop()
 {
 	if (mem.Read<DWORD>(mem.Read<DWORD>(offsets.dwLocalPlayer + (DWORD)offsets.clientBase) + offsets.m_fFlags) == 257 && GetAsyncKeyState(VK_SPACE))
 	{
 		mem.Write<DWORD>(offsets.dwForceJump, 6);
 	}
+}
+
+void Trigger()
+{
+	
+}
+
+void Antiflash()
+{
+	DWORD localPlayer = mem.Read<DWORD>(offsets.dwLocalPlayer + offsets.clientBase);
+
+	int flashDur = mem.Read<int>(localPlayer + offsets.m_flFlashDuration);
+
+	if (flashDur > 0)
+	{
+		mem.Write<int>(localPlayer + offsets.m_flFlashDuration, 0);
+	}
+
+	Sleep(10);
 }

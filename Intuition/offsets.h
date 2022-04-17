@@ -7,8 +7,8 @@ class Offsets
 
 public:
 	DWORD m_fFlags = 0x104;
-	DWORD m_flFlashDuration = 0xA420;
-	DWORD m_iCrosshairId = 0xB3E8;
+	DWORD m_flFlashDuration = 0x10470;
+	DWORD m_iCrosshairId = 0x11838;
 	DWORD m_iGlowIndex = 0x10488;
 	DWORD m_iTeamNum = 0xF4;
 	DWORD m_iHealth = 0x100;
