@@ -14,6 +14,7 @@ public:
 	DWORD m_iHealth = 0x100;
 	DWORD m_bDormant = 0xED;
 
+	DWORD dwForceAttack = 0; //patternscan
 	DWORD dwClientState = 0;		// patternscan
 	DWORD dwLocalPlayer = 0;		// patternscan
 	DWORD dwEntityList = 0;			// patternscan
